@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500&family=Oswald:wght@300;400;500&family=Roboto:wght@400;500;700&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-family: 'Oswald', sans-serif;
+}
+
+.container{
+    max-width: 1200px;
+    margin: auto;
+    width: 100%;
+    height: 500px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.descriptionBox{
+    margin: 15px;
+}
+
+.imageBox{
+    position: relative;
+    width: 300px;
+    height: 300px;
+    overflow: hidden;
+}
+
+.imageBox img{
+    width: 100%;
+}
+
+.imageBox::before{
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: -100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    height: 100%;
+    width: 0%;
+    transform: skewx(-40deg);
+    transition: all .5s;
+}
+
+.imageBox:hover::before{
+    left: -50%;
+    width: 200%;
+}
+
+.content{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    opacity: 0;
+    transition: all 0.75s;
+}
+
+.imageBox:hover .content{
+    opacity: 1;
+}
+
+.content h1{
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 400;
+    color: white;
+}
+
+.content ul{
+    list-style: none;
+    display: flex;
+}
+
+.content ul li{
+    margin: 5px 10px;
+}
+
+.content ul li a{
+    text-decoration: none;
+}
+
+.content ul li a i{
+    color: black;
+    font-size: 22px;
+    width: 50px;
+    line-height: 50px;
+    height: 50px;
+    background-color: white;
+    border-radius: 50px;
+    text-align: center;
+    transform: translateY(250px);
+}
+
+.content ul li:hover:nth-child(1) a i{
+    color: #0675e7;
+    transition: 0.5s !important;
+}
+
+.content ul li:hover:nth-child(2) a i{
+    color: #ca006d;
+    transition: 0.5s !important;
+}
+
+.content ul li:hover a i{
+    color: aqua;
+    transition: 0.5s !important;
+}
+
+.imageBox:hover .content ul li:nth-child(1) a i{
+    transition: all 0.5s 0.3s;
+    transform: translateY(0px);
+}
+
+.imageBox:hover .content ul li:nth-child(2) a i{
+    transition: all 0.5s 0.4s;
+    transform: translateY(0px);
+}
+
+.imageBox:hover .content ul li:nth-child(3) a i{
+    transition: all 0.5s 0.5s;
+    transform: translateY(0px);
+}
+
+.textHeader{
+    display: flex;
+    justify-content: space-between;
+}
+
